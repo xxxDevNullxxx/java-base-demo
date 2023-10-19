@@ -22,10 +22,11 @@ e che possa stampare a video tutti i dettagli del ___[messaggio di variazione de
 
 L'esercizio dovrà prevedere:
 
-1. La creazione dei DTO necessari per rappresentare il ___[messaggio di variazione delega](#messaggio-di-variazione-delega)___.
-2. La creazione di un'annotazione per gestire le liste di elementi ripetuti.
-3. La modifica dei metodi di serializzazione e deserializzazione per gestire la nuova annotazione.
-4. La scrittura di un @Test per verificare la corretta serializzazione/deserializzazione. 
+1. La creazione di un nuovo progetto maven con nome plugin-deleghe che conterrà il nuovo plugin.
+2. La creazione dei DTO necessari per rappresentare il ___[messaggio di variazione delega](#messaggio-di-variazione-delega)___.
+3. La creazione di un'annotazione per gestire le liste di elementi ripetuti.
+4. La modifica dei metodi di serializzazione e deserializzazione per gestire la nuova annotazione.
+5. La scrittura di un @Test per verificare la corretta serializzazione/deserializzazione. 
 
 
 ## Messaggio di variazione delega

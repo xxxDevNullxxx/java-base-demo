@@ -2,7 +2,7 @@ package it.umana.demo.spi.dto;
 
 import it.umana.demo.spi.adapter.BooleanToHostSN;
 import it.umana.demo.spi.annotation.HostStringMessage;
-import it.umana.demo.spi.annotation.OffsetLenght;
+import it.umana.demo.spi.annotation.OffsetLength;
 import it.umana.demo.spi.annotation.Order;
 import it.umana.demo.spi.annotation.HostTypeAdapter;
 
@@ -79,7 +79,7 @@ public class GestioneErroriDTO implements Serializable {
     
 
     @Order(1)
-    @OffsetLenght(lenght = 2)
+    @OffsetLength(length = 2)
     private String xber_esit_rc;
 
     /**
@@ -87,7 +87,7 @@ public class GestioneErroriDTO implements Serializable {
      */
     
     @Order(2)
-    @OffsetLenght(lenght = 2)
+    @OffsetLength(length = 2)
     private String xber_esit_pref;
     /**
      * X | Filler HOST mantenuto per gestire la serializzazione
@@ -96,7 +96,7 @@ public class GestioneErroriDTO implements Serializable {
     
     @Order(3)
 
-    @OffsetLenght(lenght = 1)
+    @OffsetLength(length = 1)
     private String xber_esit_filler_01;
     /**
      * X(3)    | Codice errore
@@ -104,7 +104,7 @@ public class GestioneErroriDTO implements Serializable {
     
     
     @Order(4)
-    @OffsetLenght(lenght = 3)
+    @OffsetLength(length = 3)
     private String xber_esit_erro;
     /**
      * X | Filler HOST mantenuto per gestire la serializzazione
@@ -112,7 +112,7 @@ public class GestioneErroriDTO implements Serializable {
     
     
     @Order(5)
-    @OffsetLenght(lenght = 1)
+    @OffsetLength(length = 1)
     private String xber_esit_filler_02;
     /**
      * X       | Tipologia dell'esito
@@ -121,7 +121,7 @@ public class GestioneErroriDTO implements Serializable {
     
 /*    */
     @Order(6)
-    @OffsetLenght(lenght = 1)
+    @OffsetLength(length = 1)
     private EXberEsitTypeDTO xber_esit_type;
     /**
      * X(3)    | Riferimento dell’errore riscontrato nel programma
@@ -129,7 +129,7 @@ public class GestioneErroriDTO implements Serializable {
     
     
     @Order(7)
-    @OffsetLenght(lenght = 3)
+    @OffsetLength(length = 3)
     private String xber_esit_rife;
     /**
      * X(8)    | Modulo in errore
@@ -137,7 +137,7 @@ public class GestioneErroriDTO implements Serializable {
     
     
     @Order(8)
-    @OffsetLenght(lenght = 8)
+    @OffsetLength(length = 8)
     private String xber_esit_modulo;
     /**
      * X(50)   | Campo in errore
@@ -145,7 +145,7 @@ public class GestioneErroriDTO implements Serializable {
     
     
     @Order(9)
-    @OffsetLenght(lenght = 50)
+    @OffsetLength(length = 50)
     private String xber_esit_campo;
     /**
      * X(20)   | Descrizione small
@@ -153,7 +153,7 @@ public class GestioneErroriDTO implements Serializable {
     
     
     @Order(10)
-    @OffsetLenght(lenght = 20)
+    @OffsetLength(length = 20)
     private String xber_esit_desc_s;
     /**
      * X(80)   | Descrizione medium
@@ -161,7 +161,7 @@ public class GestioneErroriDTO implements Serializable {
     
     
     @Order(11)
-    @OffsetLenght(lenght = 80)
+    @OffsetLength(length = 80)
     private String xber_esit_desc_m;
     /**
      * X(256)  | Descrizione big
@@ -169,7 +169,7 @@ public class GestioneErroriDTO implements Serializable {
     
     
     @Order(12)
-    @OffsetLenght(lenght = 256)
+    @OffsetLength(length = 256)
     private String xber_esit_desc_l;
     /**
      * -999    | SQLCode di errore
@@ -177,7 +177,7 @@ public class GestioneErroriDTO implements Serializable {
     
 
     @Order(13)
-    @OffsetLenght(lenght = 4)
+    @OffsetLength(length = 4)
     private String xber_esit_sqlcode;
     /**
      * X(136)  | Sqlca per DB2
@@ -185,14 +185,14 @@ public class GestioneErroriDTO implements Serializable {
     
     
     @Order(14)
-    @OffsetLenght(lenght = 136)
+    @OffsetLength(length = 136)
     private String xber_esit_sqlca;
     /**
      * X(1)    | Indica se è consigliato rollback dei dati
      */
     
     @Order(15)
-    @OffsetLenght(lenght = 1)
+    @OffsetLength(length = 1)
     @HostTypeAdapter(BooleanToHostSN.class)
     private Boolean xber_esit_dati;
     /**
@@ -200,7 +200,7 @@ public class GestioneErroriDTO implements Serializable {
      */
     
     @Order(16)
-    @OffsetLenght(lenght = 1)
+    @OffsetLength(length = 1)
     @HostTypeAdapter(BooleanToHostSN.class)
     private Boolean xber_esit_system;
     /**
@@ -209,7 +209,7 @@ public class GestioneErroriDTO implements Serializable {
     
     
     @Order(17)
-    @OffsetLenght(lenght = 31)
+    @OffsetLength(length = 31)
     private String xber_esit_filler_03;
 
     public String getXber_esit_rc() {

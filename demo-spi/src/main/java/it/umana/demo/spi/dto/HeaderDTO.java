@@ -1,7 +1,7 @@
 package it.umana.demo.spi.dto;
 
 import it.umana.demo.spi.annotation.HostStringMessage;
-import it.umana.demo.spi.annotation.OffsetLenght;
+import it.umana.demo.spi.annotation.OffsetLength;
 import it.umana.demo.spi.annotation.Order;
 
 import java.io.Serializable;
@@ -25,7 +25,7 @@ public class HeaderDTO implements Serializable{
     
 
     @Order(1)
-    @OffsetLenght(lenght = 600)
+    @OffsetLength(length = 600)
     private GestioneErroriDTO gestioneErrori;
 
     /**
@@ -34,7 +34,7 @@ public class HeaderDTO implements Serializable{
     
     
     @Order(2)
-    @OffsetLenght(lenght = 516)
+    @OffsetLength(length = 516)
     private HeaderTecnicoDTO headerTecnicoDTO;
 
     public GestioneErroriDTO getGestioneErrori() {

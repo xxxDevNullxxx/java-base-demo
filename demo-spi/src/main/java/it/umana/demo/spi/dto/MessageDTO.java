@@ -1,7 +1,7 @@
 package it.umana.demo.spi.dto;
 
 import it.umana.demo.spi.annotation.HostStringMessage;
-import it.umana.demo.spi.annotation.OffsetLenght;
+import it.umana.demo.spi.annotation.OffsetLength;
 import it.umana.demo.spi.annotation.Order;
 
 import java.nio.ByteBuffer;
@@ -22,7 +22,7 @@ public class MessageDTO {
     private static final String ENCODING_HOST = "IBM-1047";
 
     @Order(1)
-    @OffsetLenght(lenght = 1116)
+    @OffsetLength(length = 1116)
     /**
      * Informazioni di controllo
      */
@@ -60,12 +60,12 @@ public class MessageDTO {
      */
 
     @Order(2)
-    @OffsetLenght(lenght = 4,trim = false)
+    @OffsetLength(length = 4,trim = false)
     private String xbbu_buff_l;
 
 
     @Order(3)
-    @OffsetLenght(any = true,trim = false)
+    @OffsetLength(any = true,trim = false)
     /**
      * Contenuto informativo da veicolare.
      * <p>

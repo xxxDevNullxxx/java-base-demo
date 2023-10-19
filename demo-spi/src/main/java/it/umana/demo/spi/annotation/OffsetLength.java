@@ -12,16 +12,16 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Retention(RUNTIME)
 @Target(ElementType.FIELD)
-public @interface OffsetLenght {
+public @interface OffsetLength {
 
     /**
      * Determina la lunghezza del campo
      * @return
      */
-    int lenght() default 0;
+    int length() default 0;
 
     /**
-     * Se any è valorizzato a true viene ignorato il campo lenght
+     * Se any è valorizzato a true viene ignorato il campo length
      * e si considera che il campo termini con il fine stringa.
      * @return
      */

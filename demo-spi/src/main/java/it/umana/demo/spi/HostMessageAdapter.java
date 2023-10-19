@@ -35,21 +35,21 @@ public class HostMessageAdapter {
 
                 for (Field field : orderFieldsList) {
 
-                    if (field.isAnnotationPresent(OffsetLenght.class)) {
+                    if (field.isAnnotationPresent(OffsetLength.class)) {
 
                         if (!field.isAccessible()) {
                             field.setAccessible(true);
                         }
 
-                        OffsetLenght annotation = field.getAnnotation(OffsetLenght.class);
-                        int lenghtField = annotation.lenght();
+                        OffsetLength annotation = field.getAnnotation(OffsetLength.class);
+                        int lengthField = annotation.length();
 
                         String fieldValue = this.marshal(field.get(obj));
                         if (!annotation.any()) {
-                            fieldValue = (fieldValue.length() > lenghtField) ? fieldValue.substring(0, lenghtField) : fieldValue;
+                            fieldValue = (fieldValue.length() > lengthField) ? fieldValue.substring(0, lengthField) : fieldValue;
                             sb.append(fieldValue);
                             fieldValue = (fieldValue == null) ? "" : fieldValue;
-                            for (int i = 0, l = lenghtField - fieldValue.length(); i < l; i++) {
+                            for (int i = 0, l = lengthField - fieldValue.length(); i < l; i++) {
                                 sb.append(" ");
                             }
                         } else {
@@ -110,12 +110,12 @@ public class HostMessageAdapter {
 
                     Object fieldValue = null;
 
-                    if (field.isAnnotationPresent(OffsetLenght.class)) {
-                        OffsetLenght annotation = field.getAnnotation(OffsetLenght.class);
-                        int lenghtField = annotation.lenght();
-                        int endValue = (annotation.any()) ? message.length() : indexReadFromMessage + lenghtField;
+                    if (field.isAnnotationPresent(OffsetLength.class)) {
+                        OffsetLength annotation = field.getAnnotation(OffsetLength.class);
+                        int lengthField = annotation.length();
+                        int endValue = (annotation.any()) ? message.length() : indexReadFromMessage + lengthField;
                         if (message.length() < endValue) {
-                            throw new Exception(String.format("La lunghezza %d non è valida per il campo %s", lenghtField, field.toGenericString()));
+                            throw new Exception(String.format("La lunghezza %d non è valida per il campo %s", lengthField, field.toGenericString()));
                         }
                         String partialMessage = message.substring(indexReadFromMessage, endValue);
                         fieldValue = this.unmarshal(partialMessage, field.getType(), field);
@@ -188,8 +188,8 @@ public class HostMessageAdapter {
             if (clazz.equals(String.class)) {
 
                 boolean trimString = true;
-                if (currentField != null && currentField.isAnnotationPresent(OffsetLenght.class)) {
-                    OffsetLenght annotation = currentField.getAnnotation(OffsetLenght.class);
+                if (currentField != null && currentField.isAnnotationPresent(OffsetLength.class)) {
+                    OffsetLength annotation = currentField.getAnnotation(OffsetLength.class);
                     trimString = annotation.trim();
                 }
                 return (trimString) ? stringMessage.trim() : stringMessage;

@@ -4,7 +4,7 @@
 package it.umana.demo.spi.dto;
 
 import it.umana.demo.spi.annotation.HostStringMessage;
-import it.umana.demo.spi.annotation.OffsetLenght;
+import it.umana.demo.spi.annotation.OffsetLength;
 import it.umana.demo.spi.annotation.Order;
 
 import java.io.Serializable;
@@ -69,7 +69,7 @@ public class HeaderTecnicoDTO implements Serializable {
     
     
     @Order(1)
-    @OffsetLenght(lenght = 16)
+    @OffsetLength(length = 16)
     private String xbbr_codi_proc;
 
     /**
@@ -78,7 +78,7 @@ public class HeaderTecnicoDTO implements Serializable {
     
     
     @Order(2)
-    @OffsetLenght(lenght = 16)
+    @OffsetLength(length = 16)
     private String xbbr_codi_serv;
 
     /**
@@ -87,7 +87,7 @@ public class HeaderTecnicoDTO implements Serializable {
     
     
     @Order(3)
-    @OffsetLenght(lenght = 32)
+    @OffsetLength(length = 32)
     private String xbbr_codi_oper;
 
     /**
@@ -96,7 +96,7 @@ public class HeaderTecnicoDTO implements Serializable {
     
     
     @Order(4)
-    @OffsetLenght(lenght = 8)
+    @OffsetLength(length = 8)
     private String xbbr_codi_user;
 
     /**
@@ -105,7 +105,7 @@ public class HeaderTecnicoDTO implements Serializable {
     
     
     @Order(5)
-    @OffsetLenght(lenght = 8)
+    @OffsetLength(length = 8)
     private String xbbr_codi_term;
 
     /**
@@ -114,7 +114,7 @@ public class HeaderTecnicoDTO implements Serializable {
     
     
     @Order(6)
-    @OffsetLenght(lenght = 3)
+    @OffsetLength(length = 3)
     private String xbbr_codi_isti;
 
     /**
@@ -123,7 +123,7 @@ public class HeaderTecnicoDTO implements Serializable {
     
     
     @Order(7)
-    @OffsetLenght(lenght = 5)
+    @OffsetLength(length = 5)
     private String xbbr_codi_dipe;
 
     /**
@@ -132,7 +132,7 @@ public class HeaderTecnicoDTO implements Serializable {
     
     
     @Order(8)
-    @OffsetLenght(lenght = 6)
+    @OffsetLength(length = 6)
     private String xbbr_codi_uo;
 
     /**
@@ -141,7 +141,7 @@ public class HeaderTecnicoDTO implements Serializable {
     
     
     @Order(9)
-    @OffsetLenght(lenght = 8)
+    @OffsetLength(length = 8)
     private String xbbr_codi_prov;
 
     /**
@@ -150,7 +150,7 @@ public class HeaderTecnicoDTO implements Serializable {
     
     
     @Order(10)
-    @OffsetLenght(lenght = 5)
+    @OffsetLength(length = 5)
     private String xbbr_codi_cana;
 
     /**
@@ -159,7 +159,7 @@ public class HeaderTecnicoDTO implements Serializable {
     
     
     @Order(11)
-    @OffsetLenght(lenght = 3)
+    @OffsetLength(length = 3)
     private String xbbr_sigl_cana;
 
     /**
@@ -168,7 +168,7 @@ public class HeaderTecnicoDTO implements Serializable {
     
     
     @Order(12)
-    @OffsetLenght(lenght = 32)
+    @OffsetLength(length = 32)
     private String xbbr_codi_guid;
 
 
@@ -177,7 +177,7 @@ public class HeaderTecnicoDTO implements Serializable {
      */
     
     @Order(13)
-    @OffsetLenght(lenght = 1)
+    @OffsetLength(length = 1)
     private Boolean xbbr_forza_sincrono;
 
     /**
@@ -185,7 +185,7 @@ public class HeaderTecnicoDTO implements Serializable {
      */
     
     @Order(14)
-    @OffsetLenght(lenght = 8)
+    @OffsetLength(length = 8)
     private String xbbr_dest_proc;
 
     /**
@@ -193,7 +193,7 @@ public class HeaderTecnicoDTO implements Serializable {
      */
     
     @Order(15)
-    @OffsetLenght(lenght = 365)
+    @OffsetLength(length = 365)
     private String xbbr_filler;
 
 

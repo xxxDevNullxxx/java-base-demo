@@ -1,6 +1,6 @@
 package it.umana.demo;
 
-import it.umana.demo.dto.LombockDTO;
+import it.umana.demo.dto.LombokDTO;
 import it.umana.demo.dto.RecordDTO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -24,7 +24,7 @@ public class dtoTest {
     void lombockTest() {
         Date data = new Date();
 
-        var record = new LombockDTO(STRING_DEMO, data,Integer.MAX_VALUE);
+        var record = new LombokDTO(STRING_DEMO, data,Integer.MAX_VALUE);
 
 
 

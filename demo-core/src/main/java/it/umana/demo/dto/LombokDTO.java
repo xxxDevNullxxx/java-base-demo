@@ -9,7 +9,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class LombockDTO {
+public class LombokDTO {
     private String stringa;
     private Date data;
     private Integer integer;

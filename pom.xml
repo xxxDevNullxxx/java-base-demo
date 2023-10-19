@@ -17,6 +17,8 @@
     <junit.jupiter.version>5.10.0</junit.jupiter.version>
     <junit-platform-suite.version>1.10.0</junit-platform-suite.version>
     <log4j.version>2.17.2</log4j.version>
+    <org.mapstruct.version>1.5.3.Final</org.mapstruct.version>
+    <lombok.version>1.18.30</lombok.version>
   </properties>
 
   <modules>
@@ -61,10 +63,18 @@
       <dependency>
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
-        <version>1.18.30</version>
+        <version>${lombok.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct</artifactId>
+        <version>${org.mapstruct.version}</version>
       </dependency>
 
   </dependencies>
+
+
   <build>
     <plugins>
       <plugin>
@@ -75,6 +85,23 @@
           <source>21</source>
           <target>21</target>
           <compilerArgs>--enable-preview</compilerArgs>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.mapstruct</groupId>
+              <artifactId>mapstruct-processor</artifactId>
+              <version>${org.mapstruct.version}</version>
+            </path>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>${lombok.version}</version>
+            </path>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok-mapstruct-binding</artifactId>
+              <version>0.2.0</version>
+            </path>
+          </annotationProcessorPaths>
         </configuration>
       </plugin>
       <plugin>

@@ -36,6 +36,9 @@ public class DemoScodatore {
         log.info("Invio messaggio plugin mock");
         scodatore.pushMessage(getDemoMessage("DEMO","MOCK","OUT2","PAYLOAD"));
 
+        log.info("Invio messaggio delega");
+        String messaggioDelega = getMessaggioDelega("123", "5", "10", "13", "ciao", "7", "pippo", "20230120", "20230530", "3", "5", "1", "43", "1");
+        scodatore.pushMessage(getDemoMessage("DEMO","DELE","OUT3",messaggioDelega));
     }
 
     private static String getDemoMessage(String xbbr_codi_proc, String xbbr_codi_serv, String xbbr_dest_proc, String payload) {
@@ -44,6 +47,13 @@ public class DemoScodatore {
         """;
         return message;
 
+    }
+
+    private static String getMessaggioDelega(String funzione, String istituto, String numDelega, String tipoLegame, String descrLegame, String tipoFirma, String descrFirma, String dataInizio, String dataFine, String servizio, String categoria, String filiale, String numero, String sottonumero){
+        var message = FMT."""
+        %-3s\{funzione}%-5s\{istituto}%-10s\{numDelega}%-4s\{tipoLegame}%-50s\{descrLegame}%-4s\{tipoFirma}%-50s\{descrFirma}%-8s\{dataInizio}%-8s\{dataFine}%-3s\{servizio}%-3s\{categoria}%-5s\{filiale}%-6s\{numero}%-3s\{sottonumero}
+        """;
+        return message;
     }
 
 

@@ -16,6 +16,7 @@ public class Config {
     private HashMap<String, MessageConfigurationDTO> storeHashMap = new HashMap<String, MessageConfigurationDTO>() {{
         put("DEMO|LOG|OUT1", new MessageConfigurationDTO("it.umana.demo.plugin.bo.LoggerBO","CODA_LOG",new Date()));
         put("DEMO|MOCK|OUT2", new MessageConfigurationDTO("it.umana.demo.plugin.bo.MockPluginBO","CODA_MOCK",new Date()));
+        put("DEMO|DELE|OUT3", new MessageConfigurationDTO("it.umana.demo.plugin.deleghe.DelegheBO","CODA_DELE",new Date()));
     }};
 
 

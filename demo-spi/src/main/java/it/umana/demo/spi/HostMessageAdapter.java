@@ -3,6 +3,7 @@ package it.umana.demo.spi;
 import it.umana.demo.spi.adapter.HostFieldAdapter;
 import it.umana.demo.spi.annotation.*;
 import it.umana.demo.spi.dto.EXberEsitTypeDTO;
+import it.umana.demo.spi.manager.IDynamicOccoursManager;
 import lombok.extern.java.Log;
 
 import java.lang.reflect.Constructor;
@@ -54,6 +55,19 @@ public class HostMessageAdapter {
                             }
                         } else {
                             sb.append(fieldValue);
+                        }
+                    } else if (field.isAnnotationPresent(DynamicOccours.class)) {
+
+                        DynamicOccours annotation = field.getAnnotation(DynamicOccours.class);
+                        IDynamicOccoursManager dynamicOccoursManager = annotation.DynamicOccoursManager;
+                        if (dynamicOccoursManager != null) {
+                            sb.append(dynamicOccoursManager.marshal(field.get(obj), field));
+                            if (field.isAnnotationPresent(LastField.class)) {
+                                LastField annotationLF = (LastField) field.getAnnotation(LastField.class);
+                                sb.append(annotationLF.terminatorString());
+                            }
+                        } else {
+                            log.warning("DynamicOccoursManager nullo, impossibile serializzare il campo " + field.getName());
                         }
                     }
                 }
@@ -121,6 +135,19 @@ public class HostMessageAdapter {
                         fieldValue = this.unmarshal(partialMessage, field.getType(), field);
 
                         indexReadFromMessage = endValue;
+                    } else if (field.isAnnotationPresent(DynamicOccours.class)) {
+                        DynamicOccours annotation = field.getAnnotation(DynamicOccours.class);
+                        IDynamicOccoursManager dynamicOccoursDictionaryManager = annotation.DynamicOccoursManager;
+
+                        if (dynamicOccoursDictionaryManager != null) {
+                            String partialMessage = message.substring(indexReadFromMessage);
+
+                            fieldValue = dynamicOccoursDictionaryManager.unmarshal(partialMessage, field);
+
+                        } else {
+                            log.warning("DynamicOccoursDictionaryManager nullo, impossibile deserializzare il campo " + currentField.getName());
+                            fieldValue = null;
+                        }
                     }
 
 

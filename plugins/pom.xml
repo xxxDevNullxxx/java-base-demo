@@ -16,6 +16,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>plugin1</module>
+        <module>plugin-deleghe</module>
     </modules>
     <dependencies>
         <dependency>

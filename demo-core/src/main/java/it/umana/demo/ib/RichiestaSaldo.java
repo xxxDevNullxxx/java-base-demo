@@ -1,10 +1,5 @@
 package it.umana.demo.ib;
 
-import it.umana.demo.ib.ContoCorrente;
-import it.umana.demo.ib.MetodoAutenticazione;
-import it.umana.demo.ib.OTP;
-import it.umana.demo.ib.Operazione;
-
 import java.util.List;
 
 public class RichiestaSaldo extends Operazione {
@@ -16,9 +11,13 @@ public class RichiestaSaldo extends Operazione {
     }
 
     @Override
-    protected boolean eseguiOperazioneSpecifica() {
+    protected RichiestaSaldoRespons eseguiOperazioneSpecifica() {
         // ??? Cosa succede se devo restituire un valore?
         // return contoCorrente.recuperoSaldo();
-        return true;
+        //return true;
+        RichiestaSaldoRespons response = new RichiestaSaldoRespons();
+        response.setSaldo(1000);
+        response.setSuccesso(true);
+        return response;
     }
 }

@@ -75,6 +75,7 @@ public class ScodatoreBO {
 
             try {
                 // Creo un'istanza del plugin indicato nel classpath
+                //System.out.print(configuration.getClasspath());
                 IDemoPlugin plugin_bo = demoPluginFactory.getDemoPluginByClassName(configuration.getClasspath());
 
                 // Invoco il plugin tramite interfaccia

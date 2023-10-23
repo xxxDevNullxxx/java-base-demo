@@ -26,6 +26,7 @@
     <module>demo-spi</module>
     <module>demo-logic</module>
     <module>plugins</module>
+    <module>plugins/plugin-deleghe</module>
   </modules>
 
   <dependencies>

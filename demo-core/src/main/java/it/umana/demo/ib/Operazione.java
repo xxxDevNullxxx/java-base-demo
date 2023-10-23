@@ -1,5 +1,8 @@
 package it.umana.demo.ib;
 
+import lombok.SneakyThrows;
+
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,17 +20,24 @@ public abstract class Operazione {
         this.operazioneDaEstero = operazioneDaEstero;
     }
 
-    public boolean eseguiOperazione(){
+    @SneakyThrows
+    public <R extends AResponsBase> R eseguiOperazione(Class<R> cls) {
         var metodiDiAutenticazioneRichiesti = new ArrayList<>(autenticazioneMultiFattore);
 
         System.out.println("========================================================================================================");
         System.out.println("Operazione in corso: attendere...");
-        if(operazioneDaEstero){
+        if (operazioneDaEstero) {
             System.out.println("Attenzione, operazione eseguita dall'estero; necessario otp aggiuntivo");
             metodiDiAutenticazioneRichiesti.add(autenticazioneAggiuntiva);
         }
 
-        return login(metodiDiAutenticazioneRichiesti) && eseguiOperazioneSpecifica();
+        if (!login(metodiDiAutenticazioneRichiesti)) {
+            R response = cls.getDeclaredConstructor().newInstance();
+            response.setSuccesso(false);
+            response.setMsgEsito("Login fallito");
+            return response;
+        }
+        return eseguiOperazioneSpecifica();
     }
 
     public boolean login(List<MetodoAutenticazione> listaMetodiAutenticazione){
@@ -56,6 +66,6 @@ public abstract class Operazione {
         return esito;
     }
 
-    protected abstract boolean eseguiOperazioneSpecifica();
+    protected abstract <R extends AResponsBase> R eseguiOperazioneSpecifica();
 
 }

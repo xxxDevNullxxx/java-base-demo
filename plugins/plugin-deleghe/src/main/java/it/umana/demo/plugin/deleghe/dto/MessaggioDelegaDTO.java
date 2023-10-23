@@ -1,6 +1,9 @@
 package it.umana.demo.plugin.deleghe.dto;
 
 import it.umana.demo.spi.annotation.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -12,6 +15,9 @@ import java.util.List;
  * @author ACME
  */
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @HostStringMessage()
 public class MessaggioDelegaDTO {
 

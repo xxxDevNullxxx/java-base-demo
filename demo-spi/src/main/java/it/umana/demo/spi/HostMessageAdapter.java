@@ -150,6 +150,9 @@ public class HostMessageAdapter {
                         }
                     }
 
+                    if (field.isAnnotationPresent(DynamicOccours.class)) {
+
+                    }
 
                     field.set(objectInstance, fieldValue);
 

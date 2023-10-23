@@ -2,20 +2,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>it.umana.demo</groupId>
-        <artifactId>java-base-demo</artifactId>
+        <groupId>it.umana.demo.plugin</groupId>
+        <artifactId>plugins</artifactId>
         <version>1.0.0</version>
-        <relativePath>../../pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>plugin-deleghe</artifactId>
     <name>Archetype - plugin-deleghe</name>
     <url>http://maven.apache.org</url>
-    <dependencies>
-        <dependency>
-            <groupId>it.umana.demo</groupId>
-            <artifactId>demo-spi</artifactId>
-            <version>1.0.0</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
 </project>

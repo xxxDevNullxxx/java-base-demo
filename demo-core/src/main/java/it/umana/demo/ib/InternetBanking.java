@@ -1,7 +1,9 @@
 package it.umana.demo.ib;
 
 import it.umana.demo.ib.*;
+import lombok.SneakyThrows;
 
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
@@ -11,11 +13,13 @@ import java.util.List;
  */
 public class InternetBanking
 {
-    public static void main( String[] args )
-    {
-        eseguiBonifico();
+    @SneakyThrows
+    public static void main( String[] args ) {
+        //eseguiBonifico();
+        visualizzaSaldo();
     }
 
+    @SneakyThrows
     public static boolean eseguiBonifico() {
 
         byte[] datiImpronta = {(byte) 0xFF, (byte) 0x00,(byte) 0xFF, (byte) 0x00};
@@ -34,13 +38,29 @@ public class InternetBanking
                 .setAutenticazioneAggiuntiva(new OTP(123456789))
                 .createBonifico();
 
-        if(bonifico.eseguiOperazione()){
+        if (bonifico.eseguiOperazione(BonificoRespons.class).isSuccesso()){
             System.out.println("Bonifico eseguito con successo");
             return true;
-        }else{
+        } else {
             System.out.println("Errore durante l'esecuzione di un bonifico");
             return false;
         }
 
+    }
+
+    public static boolean visualizzaSaldo() {
+        byte[] datiImpronta = {(byte) 0xFF, (byte) 0x00,(byte) 0xFF, (byte) 0x00};
+        List<MetodoAutenticazione> autenticazioneMultiFattore = Arrays.asList(
+                new AutenticazioneBase("utente","Password"),
+                new ImprontaDigitale(datiImpronta)
+        );
+        RichiestaSaldo richiestaSaldo = new RichiestaSaldo(autenticazioneMultiFattore,new OTP(123456789), true);
+        RichiestaSaldoRespons richiestaSaldoRespons = richiestaSaldo.eseguiOperazioneSpecifica();
+        if (richiestaSaldoRespons.isSuccesso()) {
+           System.out.printf("Il saldo corrente è: %.2f", richiestaSaldoRespons.getSaldo());
+        } else {
+            System.out.println("la richiesta saldo non è andata a buon fine!");
+        }
+        return true;
     }
 }

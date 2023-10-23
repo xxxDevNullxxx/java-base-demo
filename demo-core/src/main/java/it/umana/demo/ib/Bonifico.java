@@ -22,7 +22,7 @@ public class Bonifico extends Operazione{
 
 
     @Override
-    protected boolean eseguiOperazioneSpecifica() {
+    protected BonificoRespons eseguiOperazioneSpecifica() {
 //        System.out.println("Eseguo bonifico:");
 //        System.out.println(String.format("Da CC: %s ", contoCorrenteAddebito.toString()));
 //        System.out.println(String.format("Beneficiario: %s ", beneficiario.toString()));
@@ -38,7 +38,9 @@ public class Bonifico extends Operazione{
             ========================================================================================================
             """
         );
-        return true;
+        BonificoRespons response = new BonificoRespons();
+        response.setSuccesso(true);
+        return response;
     }
 
     public ContoCorrente getContoCorrenteAddebito() {
